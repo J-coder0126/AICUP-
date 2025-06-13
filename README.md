@@ -4,14 +4,19 @@
 ## 創建環境
 創建任務一 whisperX-large v3環境
     
-    conda create -n <your_env_name> -f environment_whisperx.yml
+    conda create -n <your_env_name1> -f environment_whisperx.yml
+創建任務二 推論環境  
 
+    conda create -n <your_env_name2> -f task2_env.yml
 ****
-## 任務一 錄音檔案轉為文字稿  
+## 任務一 錄音檔案轉為文字稿 
+使用以下程式碼，啟動環境
+
+    conda acitvate <your_env_name1>
+    
 使用以下程式碼，將錄音檔轉為文字稿  
 *需修改 `AI_CUP_whisper_output_dictionary` 檔案內 `audio_dir` 更換為所需的錄音檔案
     
-
     python AI_CUP_whisper_output_dictionary.py
 
 使用以下程式碼，將文字稿整合成上傳txt檔案  
@@ -21,6 +26,9 @@
 
 ****
 ## 任務二 找出敏感字詞
+使用以下程式碼，啟動環境  
+
+    conda acitvate <your_env_name2>
 由於本組中文英文分開處理，故首先將txt以及json檔案的中文與英文分開    
 *需修改 `split_ch_en`、`split_json_ch_en` 檔案內 `folder_path` 資料夾路徑  
 txt檔案使用

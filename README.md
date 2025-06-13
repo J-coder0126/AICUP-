@@ -8,7 +8,7 @@
 
 ****
 ## 任務一 錄音檔案轉為文字稿  
-使用以下程式碼，將錄音檔轉為文字稿
+使用以下程式碼，將錄音檔轉為文字稿  
 *需修改 `AI_CUP_whisper_output_dictionary` 檔案內 `audio_dir` 更換為所需的錄音檔案
     
 
@@ -31,7 +31,7 @@ json檔案使用
 
     python split_json_ch_en.py
 
-## 接下來先處理中文檔案  
+## 處理中文檔案  
 使用以下程式碼，對中文文字稿做推論    
 *需修改 `AI_CUP_API_connect_set_test` 檔案內 `INPUT_FOLDER` 、 `OUTPUT_PATH` 資料夾路徑以及輸出txt檔案路徑
     
@@ -46,11 +46,35 @@ json檔案使用
     python chinese_find_symbol.py
 使用以下程式碼，將文字稿的敏感字詞對回去json檔中的時間以抓出敏感字詞的時間序  
 *需修改`chinese_timestep` 檔案內`local`  local需包含中文的txt以及json資料夾  
+*第252、260行需設定輸出資料夾分別為有對到時間序的檔案及沒對到時間序的檔案
     
     python chinese_timestep.py 
 
+輸出結果及為任務二中文的敏感字詞結果
+## 處理英文檔案
+使用以下程式碼，對英文文字稿做推論  
+*需修改`rag` 檔案內 `os.environ`、`txt_path`設定GPU以及英文txt資料夾路徑    
 
+    python rag.py
+使用以下程式碼，清理推論結果中不需要的文字  
+*需修改`clean_data`檔案內的第14行、第168行，設定推論文字檔及輸出檔案\
+        
+        python clean_data
+使用以下程式碼，找出敏感字詞中的特殊字元      
+******************這邊還沒打完  
+        
+        python English_find_symbol.py
 
+使用以下程式碼，將文字稿的敏感字詞對回去json檔中的時間以抓出敏感字詞的時間序  
+*需修改`English_timestep` 檔案內`local`  local需包含中文的txt以及json資料夾  
+*第252、260行需設定輸出資料夾分別為有對到時間序的檔案及沒對到時間序的檔案
+        
+        python English_timestep.py
+
+使用以下程式碼，將英文檔案中沒有對到的檔案進行模糊查詢再匹配一次  
+*需修改 `fuzzy` 檔案內 `p_txt`、`output_txt`、`json_folder`，分別代表英文沒對到的檔案、輸出路徑英文json檔案  
+
+        python fuzzy.py
     
 
 

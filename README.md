@@ -49,7 +49,7 @@ json檔案使用
 
     python AI_CUP_clean_predictions.py
 使用以下程式碼，找出敏感字詞中的特殊字元  
-******************這邊還沒打完
+*需修改`chinese_find_symbol` 檔案內 `local` 分割後的中文txt檔案
     
     python chinese_find_symbol.py
 使用以下程式碼，將文字稿的敏感字詞對回去json檔中的時間以抓出敏感字詞的時間序  
@@ -69,7 +69,7 @@ json檔案使用
         
         python clean_data.py
 使用以下程式碼，找出敏感字詞中的特殊字元      
-******************這邊還沒打完  
+*需修改`English_find_symbol` 檔案內 `local` 分割後的英文txt檔案 
         
         python English_find_symbol.py
 

@@ -67,27 +67,27 @@ json檔案使用
 使用以下程式碼，清理推論結果中不需要的文字  
 *需修改`clean_data`檔案內的第14行、第168行，設定推論文字檔及輸出檔案\
         
-        python clean_data.py
+    python clean_data.py
 使用以下程式碼，找出敏感字詞中的特殊字元      
 *需修改`English_find_symbol` 檔案內 `local` 分割後的英文txt檔案 
         
-        python English_find_symbol.py
+    python English_find_symbol.py
 
 使用以下程式碼，將文字稿的敏感字詞對回去json檔中的時間以抓出敏感字詞的時間序  
 *需修改`English_timestep` 檔案內`local`  local需包含中文的txt以及json資料夾  
 *第252、260行需設定輸出資料夾分別為有對到時間序的檔案及沒對到時間序的檔案
         
-        python English_timestep.py
+    python English_timestep.py
 
 使用以下程式碼，將英文檔案中沒有對到的檔案進行模糊查詢再匹配一次  
 *需修改 `fuzzy` 檔案內 `p_txt`、`output_txt`、`json_folder`，分別代表英文沒對到的檔案、輸出路徑英文json檔案  
 
-        python fuzzy.py
+    python fuzzy.py
     
 ** 合併中英文結果
 使用以下程式碼，將中文英文檔案合併成最終結果  
 *需修改`concate`檔案內第20行，分別代表英文結果、中文結果、輸出txt檔案  
 
-        python concate.py
+    python concate.py
 
     
